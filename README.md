@@ -23,8 +23,8 @@ docker-compose up -d
 
 Isso vai criar dois containers:
 
-- **web**: PHP com Apache (porta 8080) — código compatível com PHP 5.3
-- **db**: MySQL 5.7 (porta 3310)
+- **web**: Aplicação PHP (porta 8080) — código compatível com PHP 5.3
+- **db**: MySQL 8.0 (porta 3310)
 
 O banco de dados `estoque_coopanest` vai ser criado automaticamente na primeira execução, com as tabelas e os dados de exemplo.
 
