@@ -21,9 +21,17 @@ function buscarProduto($conexao, $id)
     $stmt = $conexao->prepare("SELECT id, nome, quantidade FROM produtos WHERE id = ?");
     $stmt->bind_param('i', $id);
     $stmt->execute();
+    $stmt->bind_result($prod_id, $prod_nome, $prod_quantidade);
 
-    $resultado = $stmt->get_result();
-    $produto = $resultado->fetch_assoc();
+    $produto = null;
+
+    if ($stmt->fetch()) {
+        $produto = array(
+            'id' => $prod_id,
+            'nome' => $prod_nome,
+            'quantidade' => $prod_quantidade
+        );
+    }
 
     $stmt->close();
 

@@ -26,14 +26,17 @@ function buscarHistorico($conexao, $produto_id, $limite)
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param('ii', $produto_id, $limite);
     $stmt->execute();
+    $stmt->bind_result($tipo, $quantidade, $observacao, $data_formatada);
 
-    $resultado = $stmt->get_result();
     $historico = array();
 
-    if ($resultado && $resultado->num_rows > 0) {
-        while ($linha = $resultado->fetch_assoc()) {
-            $historico[] = $linha;
-        }
+    while ($stmt->fetch()) {
+        $historico[] = array(
+            'tipo' => $tipo,
+            'quantidade' => $quantidade,
+            'observacao' => $observacao,
+            'data_formatada' => $data_formatada
+        );
     }
 
     $stmt->close();
