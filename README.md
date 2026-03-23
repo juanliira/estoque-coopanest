@@ -80,7 +80,7 @@ estoque-coopanest/
 | Tecnologia | Versão | Papel |
 |------------|--------|-------|
 | PHP | 5.3+ | Backend, validações, comunicação com o banco |
-| MySQL | 5.7 | Armazenamento de produtos e movimentações |
+| MySQL | 8.0 | Armazenamento de produtos e movimentações |
 | MySQLi | - | Extensão PHP com suporte a prepared statements |
 | jQuery | 1.12.4 | Manipulação do DOM e chamadas AJAX |
 | HTML5/CSS3 | - | Estrutura e aparência da página |
